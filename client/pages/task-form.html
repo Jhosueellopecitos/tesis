@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clauds - Nueva Tarea</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <h2>Agregar tarea</h2>
+    <form id="formTarea" class="formulario">
+      <label for="titulo">Título de la tarea</label>
+      <input type="text" id="titulo" required />
+      <label for="descripcion">Descripción</label>
+      <input type="text" id="descripcion" />
+      <label for="fecha">Fecha y hora</label>
+      <input type="datetime-local" id="fecha" required />
+      <label>
+        <input type="checkbox" id="recordatorio" />
+        ¿Activar recordatorio?
+      </label>
+      <button type="submit">Guardar</button>
+      <a href="dashboard.html">Cancelar</a>
+    </form>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

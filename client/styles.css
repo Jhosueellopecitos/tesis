@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6fb;
+}
+
+/* Login */
+.login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 320px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #2d5fa7;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1f4c8e;
+}
+
+/* Dashboard */
+.dashboard-body {
+  display: flex;
+}
+
+.sidebar {
+  background-color: #2d5fa7;
+  color: white;
+  padding: 20px;
+  min-width: 200px;
+  height: 100vh;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.sidebar li.activo {
+  font-weight: bold;
+}
+
+.main-panel {
+  flex: 1;
+  padding: 20px;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-nueva {
+  font-size: 24px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 50%;
+  background-color: #2d5fa7;
+  color: white;
+  cursor: pointer;
+}
+
+.lista-tareas {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.lista-tareas li {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/*Menu*/
+
+.sidebar a {
+  text-decoration: none;     
+  color: inherit;            
+  font-weight: normal;
+}
+
+.sidebar a:hover {
+  text-decoration: underline; 
+  color: #cbdaf7;            
+}
+

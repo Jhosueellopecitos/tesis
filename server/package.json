@@ -16,5 +16,10 @@
     "url": "https://github.com/Jhosueellopecitos/tesis/issues"
   },
   "homepage": "https://github.com/Jhosueellopecitos/tesis#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.15.0"
+  }
 }
