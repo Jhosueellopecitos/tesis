@@ -13,7 +13,7 @@
     <h2>Clauds</h2>
     <ul>
       <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-      <li class="activo"><a href="dashboard.html"><i class="fa-solid fa-list"></i> Tareas</a></li>
+      <li class="activo"><a href="registro.html"><i class="fa-solid fa-list"></i> Registro</a></li>
       <li><a href="perfil.html"><i class="fa-solid fa-user"></i> Perfil</a></li>
       <li><a href="#" id="cerrarSesion"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a></li>
     </ul>
@@ -30,6 +30,35 @@
       <!-- Aquí se cargarán las tareas dinámicamente -->
     </ul>
   </main>
-  <script src="../script.js"></script>
+  
+
+  <div id="modalTarea" class="modal">
+  <div class="modal-contenido">
+    <span id="cerrarModal" class="cerrar">&times;</span>
+    <h3 id="modalTitulo">Nueva tarea</h3>
+    <form id="formTarea">
+  <div class="campo">
+    <input type="text" id="titulo" placeholder="Título" required />
+  </div>
+
+  <input type="hidden" id="tarea_id" />
+
+  <div class="campo">
+    <input type="text" id="descripcion" placeholder="Descripción" />
+  </div>
+
+  <div class="campo">
+    <input type="datetime-local" id="fecha" required />
+  </div>
+
+  <div class="campo checkbox">
+    <label><input type="checkbox" id="recordatorio" /> Recordatorio</label>
+  </div>
+
+  <button type="submit" class="btn-guardar">Guardar</button>
+</form>
+  </div>
+</div>
+<script src="../script.js"></script>
 </body>
 </html>
