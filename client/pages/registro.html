@@ -4,9 +4,13 @@
   <meta charset="UTF-8">
   <title>Clauds - Registro de Tareas</title>
   <link rel="stylesheet" href="../styles.css">
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 </head>
 <body class="dashboard-body">
+  <!-- ===== Sidebar ===== -->
   <div class="sidebar">
     <h2>Clauds</h2>
     <ul>
@@ -17,15 +21,28 @@
     </ul>
   </div>
 
+  <!-- ===== Main ===== -->
   <main class="main-panel">
     <div class="encabezado">
       <h2>Registro de Tareas Completadas</h2>
     </div>
-    <ul id="registroTareas" class="lista-tareas">
-      <!-- Aquí se insertarán las tareas completadas -->
-    </ul>
+
+    <!-- 👉 Tabla DataTables en lugar de la lista -->
+    <table id="tablaRegistro" class="display" style="width:100%">
+      <thead>
+        <tr>
+          <th>Tarea</th>
+          <th>Fecha completada</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
   </main>
 
+  <!-- jQuery y DataTables JS -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <!-- Script principal de la app -->
   <script src="../script.js"></script>
 </body>
 </html>

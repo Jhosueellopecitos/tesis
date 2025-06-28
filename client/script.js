@@ -152,18 +152,7 @@ async function cargarTareas() {
   });
 }
 
-// Mostrar registros (reemplaza tareas en menú lateral)
-if (window.location.pathname.includes('registro.html')) {
-  const contenedor = document.getElementById('registroTareas');
-  const registros = JSON.parse(localStorage.getItem('registroTareas')) || [];
-  contenedor.innerHTML = '';
-  registros.forEach(r => {
-    const item = document.createElement('li');
-    const fechaLocal = new Date(r.fecha).toLocaleString();
-    item.textContent = `${r.titulo} completada el ${fechaLocal}`;
-    contenedor.appendChild(item);
-  });
-}
+
 
 // Referencias al modal
 const modal = document.getElementById('modalTarea');
@@ -288,3 +277,36 @@ if (window.location.pathname.includes('dashboard.html')) {
   cargarTareas();
   setInterval(cargarTareas, 60000);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Solo ejecutar en registro.html
+  if (!window.location.pathname.includes('registro.html')) return;
+
+  const tabla = document.getElementById('tablaRegistro');
+  if (!tabla) {
+    console.warn('⚠️ Tabla no encontrada en el DOM');
+    return;
+  }
+
+  const tbody = tabla.querySelector('tbody');
+  if (!tbody) {
+    console.warn('⚠️ tbody no encontrado en #tablaRegistro');
+    return;
+  }
+
+  const registros = JSON.parse(localStorage.getItem('registroTareas')) || [];
+
+  registros.forEach(r => {
+    const fechaLocal = new Date(r.fecha).toLocaleString();
+    const fila = `<tr><td>${r.titulo}</td><td>${fechaLocal}</td></tr>`;
+    tbody.insertAdjacentHTML('beforeend', fila);
+  });
+
+  $('#tablaRegistro').DataTable({
+    order: [[1, 'desc']],
+    pageLength: 8,
+    language: {
+      url: 'https://cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+    }
+  });
+});
